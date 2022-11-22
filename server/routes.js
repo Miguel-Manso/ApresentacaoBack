@@ -16,6 +16,6 @@ routes.post('/usuario/login', UsuarioController.loginUsuario)
 
 
 routes.get("/postagem/", PostController.selectPost)
-routes.post("/postagem/novo/", PostController.IncertPost)
+routes.post("/postagem/novo/", PostController.InsertPost)
 
 export { routes }

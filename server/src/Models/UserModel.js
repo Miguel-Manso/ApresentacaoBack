@@ -47,9 +47,9 @@ export class Usuario{
         }
     }
 
-    static  async Insert(){
+    async Insert(){
         try{
-            const { rowsAffected } = Connection.query(`insert into usuario values ('${this.nomeUser}', '${this.emailUser}', '${this.senhaUser}', ${this.nivelUser}')`)
+            const { rowsAffected } = Connection.query(`insert into usuario values ('${this.nomeUser}', '${this.emailUser}', '${this.senhaUser}', ${this.nivelUser})`)
             return rowsAffected //antes tava trul
         }
         catch (err)
@@ -61,8 +61,10 @@ export class Usuario{
 
     async Update(){
         try{
-            const { rowsAffected } =  await Connection.query(`update usuario set nomeUser = '${this.nomeUser}', emailUser = '${this.emailUser}', senhaUser = '${this.senhaUser}', dtNasc = '${this.dtNasc}', nivelUser = ${this.nivelUser}, statusUser = ${this.statusUser}, dataInsert = '${this.dataInsert}', dataUpdate = '${this.dataUpdate}' where idUser = ${this.idUser}`)
+            const { rowsAffected } =  await Connection.query(`update usuario set nomeUser = '${this.nomeUser}' where idUser = ${this.idUser}`)
+            console.log(rowsAffected)
             return rowsAffected
+            
         }
         catch (err)
         {

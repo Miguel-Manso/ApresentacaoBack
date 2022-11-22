@@ -22,10 +22,10 @@ export class Postagem{
         }
     }
 
-    static async NovoPost(){
+    async NovoPost(){
         try{
-            const { rowsAffected } = await Connection.query(`insert into postagem  values ('${this.tituloPost }', '${this.textPost}')`)
-            return rowsAffected 
+            const { rowsAffected } = await Connection.query(`insert into postagem values ('${this.tituloPost }', '${this.textPost}', ${this.FK_idUser}, ${this.FK_idCategoria})`)
+            return rowsAffected
         }
         catch (err)
         {
