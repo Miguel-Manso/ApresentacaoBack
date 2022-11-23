@@ -1,4 +1,3 @@
-import { request } from "express";
 import { Postagem } from "../Models/PostModel.js";
 
 export class PostController{

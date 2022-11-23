@@ -61,10 +61,8 @@ export class Usuario{
 
     async Update(){
         try{
-            const { rowsAffected } =  await Connection.query(`update usuario set nomeUser = '${this.nomeUser}' where idUser = ${this.idUser}`)
-            console.log(rowsAffected)
+            const { rowsAffected } = Connection.query(`update usuario set nomeUser = '${this.nomeUser}' where idUser = ${this.idUser}`)
             return rowsAffected
-            
         }
         catch (err)
         {
