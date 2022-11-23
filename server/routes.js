@@ -1,6 +1,7 @@
 import express from "express";
 import { UsuarioController } from "./src/Controllers/UserController.js";
 import { PostController } from "./src/Controllers/PostController.js";
+import { CatController } from "./src/Controllers/CatController.js";
 
 const routes = express.Router();
 
@@ -17,5 +18,7 @@ routes.post('/usuario/login', UsuarioController.loginUsuario)
 
 routes.get("/postagem/", PostController.selectPost)
 routes.post("/postagem/novo/", PostController.InsertPost)
+
+routes.get("/categoria/", CatController.selectCat)
 
 export { routes }

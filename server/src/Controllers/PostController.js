@@ -16,8 +16,8 @@ export class PostController{
 
     static async InsertPost(req,res){
         try{
-            const {tituloPost, textPost,FK_idUser,FK_idCategoria } = req.body
-            const postnovo = await new Postagem(tituloPost,textPost, FK_idUser,FK_idCategoria ).NovoPost();
+            const {tituloPost, textPost } = req.body
+            const postnovo = await new Postagem(tituloPost,textPost).NovoPost();
             return res.status(200).json(postnovo);
         }
         catch(err){
