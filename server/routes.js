@@ -18,6 +18,7 @@ routes.post('/usuario/login', UsuarioController.loginUsuario)
 
 routes.get("/postagem/", PostController.selectPost)
 routes.post("/postagem/novo/", PostController.InsertPost)
+routes.get("/postagem/lerartigo/:idPost", PostController.ListaIdPost)
 
 routes.get("/categoria/", CatController.selectCat)
 

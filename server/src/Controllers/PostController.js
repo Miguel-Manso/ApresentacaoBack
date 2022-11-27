@@ -24,5 +24,18 @@ export class PostController{
             console.log("error controller IncertPost : " + err)
             return res.status(500).json(err)
         };   
-    }    
+    }
+    
+    static async ListaIdPost(req, res){
+        try{
+            const {idPost} = req.params
+            const {tituloPost, textPost } = req.body
+            const pesqpost = await new Postagem(tituloPost,textPost,idPost).IdLIstaPost();
+            return res.status(200).json(pesqpost);
+        }
+        catch(err){
+            console.log("error controller ListaIdPost : " + err)
+            return res.status(500).json(err)
+        };   
+    }
 }

@@ -31,5 +31,17 @@ export class Postagem{
             return (err)
         }
     }
+
+    async IdLIstaPost(){
+        try{
+            const { recordset } = await Connection.query(`select * from postagem WHERE idPost = '${this.idPost}' `)
+            return recordset
+        }
+        catch (err)
+        {
+            console.log("Error no postagemModel | IdLIstaPost | " + err)
+            return (err)
+        }
+    }
     
 }
