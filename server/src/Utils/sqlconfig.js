@@ -1,10 +1,10 @@
 export const sqlConfig = {
    
-   /* server: '10.68.102.4',
+   server: '10.68.102.4',
     port: 1433,
     user: 'sa',
     password: 'Admin2018@',
-    database: 'projeto',
+    database: 'healthfulnovo',
     options: {
       enableArithAbort : true,
       encrypt: false,
@@ -15,9 +15,9 @@ export const sqlConfig = {
       max: 10,
       min: 0,
       idleTimeoutMillis: 30000
-    },*/
+    },
     
-  
+  /*
     server: 'localhost',
     port: 1433,
     user: 'sa',
@@ -35,6 +35,7 @@ export const sqlConfig = {
       idleTimeoutMillis: 30000
     }
 
+    */
 }
 
 export const postgreConfig = {
