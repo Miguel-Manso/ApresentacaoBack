@@ -56,13 +56,29 @@ export class UsuarioController{
 
     static async loginUsuario(req, res){ 
         try {
-            const {nomeUser, emailUser, senhaUser, dtNasc, nivelUser, statusUser, dataInsert, dataUpdate} = req.body;
-            const login_Usuario = await new Usuario(nomeUser, emailUser, senhaUser, dtNasc, nivelUser, statusUser, dataInsert, dataUpdate).Login()
+            const {emailUser, senhaUser} = req.params
+            const {nomeUser, nivelUser, idUser} = req.body;
+            const login_Usuario = await new Usuario(nomeUser, emailUser, senhaUser, nivelUser, idUser).Login()
             return res.status(200).json(login_Usuario)
         } 
         catch (error) {
             console.log('Erro no usuarioController | loginUsuario | ' + error)
         }
+
+    }
+
+
+    static async ListaIdUser(req, res){
+        try{
+            const { idUser } = req.params
+            const {nomeUser, emailUser, senhaUser, nivelUser} = req.body
+            const pesquser = await new Usuario(nomeUser, emailUser, senhaUser, nivelUser, idUser).IdLIstaUser();
+            return res.status(200).json(pesquser);
+        }
+        catch(err){
+            console.log("error controller ListaIdUser : " + err)
+            return res.status(500).json(err)
+        };   
     }
 
 }

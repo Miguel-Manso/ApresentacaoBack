@@ -10,6 +10,7 @@ routes.get("/", (req, res) => {
 });
 
 routes.get('/usuario', UsuarioController.selectUsuario)
+routes.get('/usuario/perfil/:idUser', UsuarioController.ListaIdUser)
 routes.post('/usuario/novo', UsuarioController.novoUsuario)
 routes.put('/usuario/alterar/:idUser', UsuarioController.updateUsuario)
 routes.delete('/usuario/delete/:idUser', UsuarioController.deleteUsuario)

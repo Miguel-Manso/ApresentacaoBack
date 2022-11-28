@@ -101,5 +101,17 @@ export class Usuario{
         }
     }
 
+    async IdLIstaUser(){
+        try{
+            const { recordset } = await Connection.query(`select * from usuario  WHERE idUser = '${this.idUser}' `)
+            return recordset
+        }
+        catch (err)
+        {
+            console.log("Error no UserModel | IdLIstaUser | " + err)
+            return (err)
+        }
+    }
+
 
 }
