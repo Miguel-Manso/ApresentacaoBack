@@ -4,9 +4,9 @@ use healthful;
 
 CREATE TABLE usuario (
     idUser int identity (1,1) PRIMARY KEY NOT NULL,
-    nomeUser varchar (40) unique NOT NULL,
-    emailUser varchar (30) NOT NULL,
-    senhaUser varchar (30) NOT NULL,
+    nomeUser varchar (60) unique NOT NULL,
+    emailUser varchar (60) NOT NULL,
+    senhaUser varchar (60) NOT NULL,
     nivelUser int NOT NULL, 
 );
 
@@ -21,14 +21,8 @@ CREATE TABLE categoria (
 
 CREATE TABLE postagem (
     idPost int identity (1,1) PRIMARY KEY NOT NULL,
-    tituloPost varchar (20) NOT NULL,
+    tituloPost varchar (200) NOT NULL,
     textPost varchar (8000),
 );
 
 
-
-
-CREATE TABLE comentario (
-    idComent int identity (1,1) PRIMARY KEY NOT NULL,
-    textoComent varchar (3000),
-);
